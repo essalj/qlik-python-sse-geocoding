@@ -165,5 +165,5 @@ STORE Geocodes INTO [lib://Builds (qlik_qservice)/Starbucks\MinedGeocodes.qvd](q
 ```
 
 ## Add your own API Key for Google or Change Connection to http
-1. If you hit the 2500 record daily limit imposed by the Google Geocoding API, you can [add your own key by following these steps](https://developers.google.com/maps/documentation/geocoding/get-api-key). To add this key to the SSE, open up ‘\_\_main\_\_.py’ and search for ```geolocator = GoogleV3()```. Change this line to ```geolocator = GoogleV3(api_key='YOUR_API_KEY_HERE')```
-2. If you are hitting other geocoding query errors, if you do not have an API key, try changing ```geolocator = GoogleV3()``` to ```geolocator = GoogleV3(scheme='http')``` in the ‘\_\_main\_\_.py’ file.
+1. If you hit the 2500 record daily limit imposed by the Google Geocoding API, you can [add your own key by following these steps](https://developers.google.com/maps/documentation/geocoding/get-api-key). To add this key to the SSE, open up ‘\_\_main\_\_.py’ and search for ```geolocator = GoogleV3()``` (note this exists in both functions so you'd edit both occurrences). Change this line to ```geolocator = GoogleV3(api_key='YOUR_API_KEY_HERE')```
+2. If you are hitting other geocoding query errors, if you do not have an API key, try changing ```geolocator = GoogleV3()``` to ```geolocator = GoogleV3(scheme='http')``` in the ‘\_\_main\_\_.py’ file (note this exists in both functions so you'd edit both occurrences).
