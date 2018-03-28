@@ -1,0 +1,25 @@
+{
+    "Functions" : [
+        {
+            "Id" : 0,
+            "Name" : "Geocode",
+            "Type" : 2,
+            "ReturnType": 0,
+            "Params" : {
+                "address" : 0,
+                "api" : 0
+                }
+        },
+        {
+            "Id" : 1,
+            "Name" : "GeocodeScript",
+            "Type" : 2,
+            "ReturnType": 0,
+            "Params" : {
+                "text" : 0,
+                "id" : 1,
+                "api" : 0
+                }
+        }
+    ]
+}
