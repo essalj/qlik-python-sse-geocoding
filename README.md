@@ -22,6 +22,7 @@
 - [Prepare And Start Services](#prepare-and-start-services)
 - [Leverage Geocoding from within Qlik](#leverage-geocoding-from-within-qlik)
 - *[*Add your own API Key for Google or Change Connection to http*](#add-your-own-api-key-for-google-or-change-connection-to-http)*
+- [Configure your SSE as a Windows Service](#configure-your-sse-as-a-windows-service)
 
  
 ## PREPARE YOUR PROJECT DIRECTORY
@@ -167,3 +168,15 @@ STORE Geocodes INTO [lib://Builds (qlik_qservice)/Starbucks\MinedGeocodes.qvd](q
 ## Add your own API Key for Google or Change Connection to http
 1. If you hit the 2500 record daily limit imposed by the Google Geocoding API, you can [add your own key by following these steps](https://developers.google.com/maps/documentation/geocoding/get-api-key). To add this key to the SSE, open up ‘\_\_main\_\_.py’ and search for ```geolocator = GoogleV3()``` (note this exists in both functions so you'd edit both occurrences). Change this line to ```geolocator = GoogleV3(api_key='YOUR_API_KEY_HERE')```
 2. If you are hitting other geocoding query errors, if you do not have an API key, try changing ```geolocator = GoogleV3()``` to ```geolocator = GoogleV3(scheme='http')``` in the ‘\_\_main\_\_.py’ file (note this exists in both functions so you'd edit both occurrences).
+
+## CONFIGURE YOUR SSE AS A WINDOWS SERVICE
+
+Using NSSM is my personal favorite way to turn a Python SSE into a Windows Service. You will want to run your SSEs as services so that they startup automatically and run in the background.
+1. The **Path** needs to be the location of your desired Python executable. If you've followed my guide and are using a virtual environment, you can find that under 'C:\Users\\{USERNAME}\Envs\QlikSenseAAI\Scripts\python.exe'.
+2. the **Startup directory** needs to be the parent folder of the extension service. Depending on what guide you are following, the folder needs to contain the '_\_main\_\_.py' file or the 
+'ExtensionService_{yourservicename).py' file.
+3. The **Arguments** parameter is then just the name of the file that you want Python to run. Again, depending on the guide, that will either be the '\_\_main\_\_.py' file or the 'ExtensionService_{yourservicename).py' file.
+
+**Example:**
+
+![ServiceExample](https://s3.amazonaws.com/dpi-sse/PythonAsAService.png)
