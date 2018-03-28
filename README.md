@@ -4,7 +4,7 @@
 
 ## REQUIREMENTS
 
-- **Assuming prerequisite: [Python with Qlik Sense AAI – Environment Setup](https://www.dropbox.com/s/dhmd3vm7oqurn2m/DPI%20-%20Qlik%20Sense%20AAI%20and%20Python%20Environment%20Setup.pdf?dl=0)**
+- **Assuming prerequisite: [Python with Qlik Sense AAI – Environment Setup](https://s3.amazonaws.com/dpi-sse/DPI+-+Qlik+Sense+AAI+and+Python+Environment+Setup.pdf)**
     - This is not mandatory and is intended for those who are not as familiar with Python to setup a virtual environment. Feel free to follow the below instructions flexibly if you have experience.
 - Qlik Sense February 2018+
 - *Note: the Geocode() function may be used with QlikView as of November 2017+. Table loads (script tensor) are currently not supported in QlikView, but scalar functions may be used in both the script and front-end. Be aware of the performance implications here as scalar funtions are called record-by-record.*
@@ -21,7 +21,7 @@
 - [Copy the Package Contents and Import Examples](#copy-the-package-contents-and-import-examples)
 - [Prepare And Start Services](#prepare-and-start-services)
 - [Leverage Geocoding from within Qlik](#leverage-geocoding-from-within-qlik)
-- *[*Add your own API Key for Google or Change Connection to http*](#add-your-own-api-key-for-google-or-change-connection-to-http)
+- *[*Add your own API Key for Google or Change Connection to http*](#add-your-own-api-key-for-google-or-change-connection-to-http)*
 
  
 ## PREPARE YOUR PROJECT DIRECTORY
